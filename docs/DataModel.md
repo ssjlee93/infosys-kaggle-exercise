@@ -9,6 +9,8 @@ List of datasets I looked into:
 - [COVID-19 Open Research Dataset Challenge (CORD-19)](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)  
 - [COVID-19 Dataset](https://www.kaggle.com/imdevskp/corona-virus-report)  
 
+Except for Open Research Dataset Challenge, most datasets are outdated
+
 ## CSSEGI
 
 [GitHub](https://github.com/CSSEGISandData/COVID-19)  
@@ -45,3 +47,7 @@ From the list of columns, I will use:
 Optional:
 - Incident_Rate
 - Case_Fatality_Ratio
+
+# Helpful Resources
+
+spring.framework.PagingAndSortingRepository

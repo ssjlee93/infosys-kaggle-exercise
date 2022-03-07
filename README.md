@@ -14,4 +14,4 @@ This application uses a dataset from Kaggle COVID-19 database and visualizes the
 
 ## Licence
 
-MIT License 
+MIT License
