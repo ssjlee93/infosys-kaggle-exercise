@@ -1,0 +1,14 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  background-color: rosybrown;
+}
+
+.sidenav .mat-toolbar {
+  background: rgb(150, 114, 114);
+}
+
+
