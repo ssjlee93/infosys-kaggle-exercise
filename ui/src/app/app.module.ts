@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 // components
 import { AppComponent } from './app.component';
 import { NavvComponent } from './navv/navv.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TableComponent } from './table/table.component';
-
 // angular material
 import {MatCommonModule} from '@angular/material/core';
 import {MatNativeDateModule, NativeDateModule} from '@angular/material/core';
@@ -24,8 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
-
-
+// Angular cdk
 import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
@@ -38,6 +37,7 @@ import { LayoutModule } from '@angular/cdk/layout';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     MatCommonModule,
     LayoutModule,
     MatToolbarModule,

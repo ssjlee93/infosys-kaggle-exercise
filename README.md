@@ -15,3 +15,12 @@ This application uses a dataset from Kaggle COVID-19 database and visualizes the
 ## Licence
 
 MIT License
+
+## Notes
+
+@Postconstruct = after all beans and stuff are created, run the following code
+public void init(){
+}
+
+@Enable Swagger2
+@Configuration
