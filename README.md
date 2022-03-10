@@ -6,10 +6,10 @@ This application uses a dataset from Kaggle COVID-19 database and visualizes the
 
 ## Table of Contents
 
-[Requirements](#Requirements)
-[Installation](#Installation)
-[Usage](#Usage)
-[Licence](#Licence)
+[Requirements](#Requirements)  
+[Installation](#Installation)  
+[Usage](#Usage)  
+[Licence](#Licence)  
 
 ## Requirements
 
