@@ -1,6 +1,7 @@
 package com.example.infosyskaggleexercise.controller;
 
 import com.example.infosyskaggleexercise.models.CSVDatum;
+import com.example.infosyskaggleexercise.models.DBDatum;
 import com.example.infosyskaggleexercise.repository.COVID19DataRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,9 +38,9 @@ public class ExerciseController {
 
     // GET request for CSV Data
     @GetMapping(value={"/data/{date}"})
-    public List<CSVDatum> getData(@PathVariable String date) {
+    public List<DBDatum> getData(@PathVariable String date) {
         // List to hold a list of String tokens
-        List<CSVDatum> records = new ArrayList<>();
+        List<DBDatum> records = new ArrayList<>();
         // filename by date
         String fileName = "./data/" + date + ".csv";
 
@@ -54,7 +55,7 @@ public class ExerciseController {
                 String[] values = line.split(COMMA_DELIMITER);
 
                 // convert string to POJO
-                CSVDatum datum = CSVDatum.builder()
+                DBDatum datum = DBDatum.builder()
 //                        .FIPS(values[0])
                         .admin2(values[1])
                         .provinceState(values[2])
@@ -72,6 +73,7 @@ public class ExerciseController {
                         .build();
                 records.add(datum);
             }
+//            repository.saveAll(records);
         } catch (FileNotFoundException e) {
             System.out.println("No file");
         } catch (IOException e) {

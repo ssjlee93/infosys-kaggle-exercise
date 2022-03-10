@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 // components
 import { AppComponent } from './app.component';
-import { NavvComponent } from './navv/navv.component';
+import { NavComponent } from './navv/nav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TableComponent } from './table/table.component';
 // angular material
@@ -26,31 +26,46 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 // Angular cdk
 import { LayoutModule } from '@angular/cdk/layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    NavvComponent,
+    NavComponent,
     TableComponent,
   ],
   imports: [
+    // defaults
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MatCommonModule,
     LayoutModule,
+    BrowserAnimationsModule,
+    CommonModule,
+    // nav
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatNativeDateModule,
-    MatDatepickerModule,
-    MatCardModule,
     MatButtonModule,
-    MatRadioModule,
+    // table
     MatTableModule,
     MatFormFieldModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatInputModule,
+
+    // router
+    RouterModule.forRoot([
+      { path: '', component: TableComponent },
+      { path: 'products/:productId', component: PageNotFoundComponent },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

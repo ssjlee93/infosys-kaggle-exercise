@@ -16,18 +16,39 @@ import { Covid19Service } from '../covid19/covid19.service';
 })
 export class TableComponent {
   displayedColumns: string[] = ['City', 'Province/State', 'Country/Region', 'Confirmed', 'Deaths'];
-  dataSource: Datum[] = [];
+  dataSource: MatTableDataSource<Datum> = new MatTableDataSource<Datum>([]);
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
   constructor(private covid19Service: Covid19Service) {}
   
   ngOnInit(): void {
     this.showData();
   }
 
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+    this.dataSource.filterPredicate = (data: Datum, filter: string) => {
+      return data.countryRegion == filter;
+     };
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    this.dataSource.filter = filterValue;
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
   // HTTP GET all data and subscribe
   showData() {
     this.covid19Service.getData()
-    .subscribe(data => this.dataSource=data);
+    .subscribe(data => this.dataSource.data=data);
   }
 }
 
