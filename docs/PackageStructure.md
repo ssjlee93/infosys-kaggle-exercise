@@ -2,21 +2,38 @@
 
 - controller
   - ExcerciseController
-- dao
-  - COVID19Dao
-  - COVID19DaoFileImpl
 - models
-  - CSVDatum
-  - DBDatum
+  - COVID19
 - repository
-  - DBRepository
+  - COVID19DataRepository
 - App.java
 
-## DAO
+## Crawling
 
-Spring boot allows us to skip DAO; hwoever, to access local file, I added DAO for CSV files.  
+Reading and loading to DB is on an api. 
 
-## Models 
+## Previous version 
 
-CSV Datum reads data from CSV
-DB Datum reads and writes data from DB
+### DAO 
+
+To access CSV file. 
+- DAO
+  - DatumDao (interface)
+  - DatumDaoFileImpl
+
+Conclusion:
+Created an API for reading CSV data from a particular date.  
+Files are read and saved using JPA repository  
+No need for DAO for files  
+
+### models
+
+- models
+  - CSV Datum
+  - DB Datum
+
+CSV Datum to read CSV data
+DB Datum to read/write to DB.
+
+Conclusion:
+Merged the two models.  

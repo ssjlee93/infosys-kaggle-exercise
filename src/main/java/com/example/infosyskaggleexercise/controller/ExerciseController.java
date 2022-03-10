@@ -1,7 +1,6 @@
 package com.example.infosyskaggleexercise.controller;
 
-import com.example.infosyskaggleexercise.models.CSVDatum;
-import com.example.infosyskaggleexercise.models.DBDatum;
+import com.example.infosyskaggleexercise.models.COVID19;
 import com.example.infosyskaggleexercise.repository.COVID19DataRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,12 +11,10 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -38,9 +35,9 @@ public class ExerciseController {
 
     // GET request for CSV Data
     @GetMapping(value={"/data/{date}"})
-    public List<DBDatum> getData(@PathVariable String date) {
+    public List<COVID19> getData(@PathVariable String date) {
         // List to hold a list of String tokens
-        List<DBDatum> records = new ArrayList<>();
+        List<COVID19> records = new ArrayList<>();
         // filename by date
         String fileName = "./data/" + date + ".csv";
 
@@ -55,7 +52,7 @@ public class ExerciseController {
                 String[] values = line.split(COMMA_DELIMITER);
 
                 // convert string to POJO
-                DBDatum datum = DBDatum.builder()
+                COVID19 datum = COVID19.builder()
 //                        .FIPS(values[0])
                         .admin2(values[1])
                         .provinceState(values[2])
@@ -73,7 +70,10 @@ public class ExerciseController {
                         .build();
                 records.add(datum);
             }
-//            repository.saveAll(records);
+            // dealing with only 1 CSV file to crawl. Small portion.
+            // hence, delete all and save all.
+            repository.deleteAllInBatch();
+            repository.saveAll(records);
         } catch (FileNotFoundException e) {
             System.out.println("No file");
         } catch (IOException e) {
