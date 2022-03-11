@@ -15,7 +15,7 @@ import { Covid19Service } from '../covid19/covid19.service';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent {
-  displayedColumns: string[] = ['City', 'Province/State', 'Country/Region', 'Confirmed', 'Deaths'];
+  displayedColumns: string[] = ['Country/Region', 'Province/State', 'City',  'Confirmed', 'Deaths'];
   dataSource: MatTableDataSource<Datum> = new MatTableDataSource<Datum>([]);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -30,7 +30,7 @@ export class TableComponent {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
     this.dataSource.filterPredicate = (data: Datum, filter: string) => {
-      return data.countryRegion == filter;
+      return data.countryRegion.indexOf(filter) > -1;
      };
   }
 

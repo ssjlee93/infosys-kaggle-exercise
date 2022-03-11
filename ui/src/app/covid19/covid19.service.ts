@@ -15,7 +15,7 @@ const URLPrefix = "http://localhost:8080";
 })
 export class Covid19Service {
 
-  private url = URLPrefix + '/data/03-08-2022';  // URL to web api
+  private url = URLPrefix + '/data';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

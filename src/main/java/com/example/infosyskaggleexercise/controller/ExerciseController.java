@@ -34,8 +34,8 @@ public class ExerciseController {
     }
 
     // GET request for CSV Data
-    @GetMapping(value={"/data/{date}"})
-    public List<COVID19> getData(@PathVariable String date) {
+    @GetMapping(value={"/crawl/{date}"})
+    public List<COVID19> crawlData(@PathVariable String date) {
         // List to hold a list of String tokens
         List<COVID19> records = new ArrayList<>();
         // filename by date
@@ -82,4 +82,8 @@ public class ExerciseController {
         return records;
     }
 
+    @GetMapping("/data")
+    public List<COVID19> getData() {
+        return repository.findAll();
+    }
 }
