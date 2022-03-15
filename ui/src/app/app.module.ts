@@ -1,13 +1,18 @@
-import { NgModule } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from '@angular/common/http';
 // components
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TableComponent } from './table/table.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { SecurityComponent } from './security/security.component';
+// services
+import { AppService } from './app.service';
 // angular material
 import {MatCommonModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -20,11 +25,24 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-// Angular cdk
+// Angular others
 import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// Spring boot Angular
+@Injectable()
+export class XhrInterceptor implements HttpInterceptor {
+
+  intercept(req: HttpRequest<any>, next: HttpHandler) {
+    const xhr = req.clone({
+      headers: req.headers.set('X-Requested-With', 'XMLHttpRequest')
+    });
+    return next.handle(xhr);
+  }
+}
 
 @NgModule({
   declarations: [
@@ -32,6 +50,9 @@ import { CommonModule } from '@angular/common';
     PageNotFoundComponent,
     NavComponent,
     TableComponent,
+    SecurityComponent,
+    LoginComponent,
+    HomeComponent,
   ],
   imports: [
     // defaults
@@ -54,14 +75,21 @@ import { CommonModule } from '@angular/common';
     MatPaginatorModule,
     MatSortModule,
     MatInputModule,
+    // security
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule,
 
     // router
     RouterModule.forRoot([
-      { path: '', component: TableComponent },
-      { path: 'products/:productId', component: PageNotFoundComponent },
+      { path: '',  pathMatch: 'full', redirectTo: 'home'},
+      { path: 'home', component: SecurityComponent},
+      { path: 'login', component: LoginComponent},
+      { path: 'table', component: TableComponent },
     ])
   ],
-  providers: [],
+  providers: [AppService, { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

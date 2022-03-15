@@ -19,9 +19,10 @@ export class Covid19Service {
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    .append("Authorization", "Basic dXNlcjphM2YyNjQ5NC01NjcwLTQ5ODItOWQ2YS0yMGQ1OWE1ZjNjOWE=")
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {   }
 
     /** GET COVID19 data from the server */
     getData(): Observable<Datum[]> {

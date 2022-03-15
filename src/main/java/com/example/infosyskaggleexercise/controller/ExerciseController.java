@@ -5,21 +5,35 @@ import com.example.infosyskaggleexercise.repository.COVID19DataRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.security.Principal;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins="http://localhost:4200")
 public class ExerciseController {
     private final String COMMA_DELIMITER = ",";
     Logger log = LoggerFactory.getLogger(ExerciseController.class);
@@ -75,15 +89,64 @@ public class ExerciseController {
             repository.deleteAllInBatch();
             repository.saveAll(records);
         } catch (FileNotFoundException e) {
-            System.out.println("No file");
+            log.error("No file");
         } catch (IOException e) {
-            System.out.println("IO exception");
+            log.error("IO exception");
         }
         return records;
     }
 
+    // GET Request for receiving data from DB
     @GetMapping("/data")
     public List<COVID19> getData() {
         return repository.findAll();
+    }
+
+    // Spring boot Angular security
+    @GetMapping("/resource")
+    public Map<String, Object> home() {
+        Map<String, Object> model = new HashMap<>();
+        model.put("id", UUID.randomUUID().toString());
+        model.put("content", "Hello World");
+        log.info((String) model.get("id"));
+        return model;
+    }
+
+    @GetMapping("/user")
+    public Principal user(Principal user) {
+        log.info("/user : " + user.getName());
+        return user;
+    }
+
+    @EnableWebSecurity
+    @Order(SecurityProperties.BASIC_AUTH_ORDER-2)
+    protected static class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http
+                    .httpBasic()
+                    .and()
+                    .authorizeRequests()
+                    .antMatchers("/index.html", "/", "/home", "/login", "/resource", "/data").permitAll()
+                    .anyRequest().authenticated()
+                    .and()
+                    .csrf()
+                    .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+                    .and()
+                    .cors();
+        }
+    }
+
+    // Enabling Cross Origin Requests for a RESTful Web Service
+    // https://spring.io/guides/gs/rest-service-cors/#global-cors-configuration
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/greeting-javaconfig")
+                        .allowedOrigins("http://localhost:4200");
+            }
+        };
     }
 }
