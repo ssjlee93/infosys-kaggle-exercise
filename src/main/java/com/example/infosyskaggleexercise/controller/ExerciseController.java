@@ -118,25 +118,6 @@ public class ExerciseController {
         return user;
     }
 
-    @EnableWebSecurity
-    @Order(SecurityProperties.BASIC_AUTH_ORDER-2)
-    protected static class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-        @Override
-        protected void configure(HttpSecurity http) throws Exception {
-            http
-                    .httpBasic()
-                    .and()
-                    .authorizeRequests()
-                    .antMatchers("/index.html", "/", "/home", "/login", "/resource", "/data").permitAll()
-                    .anyRequest().authenticated()
-                    .and()
-                    .csrf()
-                    .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-                    .and()
-                    .cors();
-        }
-    }
-
     // Enabling Cross Origin Requests for a RESTful Web Service
     // https://spring.io/guides/gs/rest-service-cors/#global-cors-configuration
     @Bean

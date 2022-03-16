@@ -1,5 +1,3 @@
-<p>security works!</p>
-
 <div style="text-align:center"class="container">
 
   <div >
@@ -14,12 +12,14 @@
     Welcome to {{title}}!
   </h1>
   <!-- form fields with error -->
+  <div>
   <mat-form-field appearance="fill">
     <mat-label>Enter your email</mat-label>
     <input matInput placeholder="hello@example.com" [formControl]="email" required>
     <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
-
+</div>
+<div>
   <mat-form-field appearance="fill">
     <mat-label>Enter your password</mat-label>
     <input matInput [type]="hide ? 'password' : 'text'">
@@ -27,6 +27,8 @@
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>
   </mat-form-field>
+</div>
+
 
   <button mat-raised-button color="primary">Log in</button>
 </div>

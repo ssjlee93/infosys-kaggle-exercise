@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from '@angular/common/http';
 // components
 import { AppComponent } from './app.component';
-import { NavComponent } from './nav/nav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TableComponent } from './table/table.component';
 import { HomeComponent } from './home/home.component';
@@ -31,6 +30,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavigationComponent } from './navigation/navigation.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 
 // Spring boot Angular
 @Injectable()
@@ -48,11 +52,12 @@ export class XhrInterceptor implements HttpInterceptor {
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    NavComponent,
     TableComponent,
     SecurityComponent,
     LoginComponent,
     HomeComponent,
+    NavigationComponent,
+    DashboardComponent
   ],
   imports: [
     // defaults
@@ -82,12 +87,13 @@ export class XhrInterceptor implements HttpInterceptor {
     FormsModule,
 
     // router
-    RouterModule.forRoot([
-      { path: '',  pathMatch: 'full', redirectTo: 'home'},
-      { path: 'home', component: SecurityComponent},
-      { path: 'login', component: LoginComponent},
-      { path: 'table', component: TableComponent },
-    ])
+    AppRoutingModule,
+
+    MatGridListModule,
+
+    MatCardModule,
+
+    MatMenuModule
   ],
   providers: [AppService, { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true }],
   bootstrap: [AppComponent]

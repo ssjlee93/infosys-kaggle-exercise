@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Datum } from './Datum';
+import { Datum } from '../models/Datum';
 import { MatTableDataSource } from '@angular/material/table';
 
 

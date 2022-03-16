@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { HttpClient } from '@angular/common/http';
-import { Greeting } from './Greeting';
+import { Greeting } from '../models/Greeting';
 
 @Component({
   templateUrl: './home.component.html'

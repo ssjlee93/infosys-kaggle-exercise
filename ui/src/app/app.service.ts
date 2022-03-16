@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Credentials } from './login/Credentials';
-import { User } from './login/User';
+import { Credentials } from './models/Credentials';
+import { User } from './models/User';
 
 @Injectable()
 export class AppService {

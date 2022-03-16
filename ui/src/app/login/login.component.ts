@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Credentials } from './Credentials';
+import { Credentials } from '../models/Credentials';
 
 @Component({
   templateUrl: './login.component.html'
