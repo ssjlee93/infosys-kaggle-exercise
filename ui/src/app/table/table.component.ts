@@ -5,6 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { Covid19Service } from '../covid19/covid19.service';
+import { AppService } from '../app.service';
 
 /**
  * @title Data table with sorting, pagination, and filtering.

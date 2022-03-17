@@ -2,15 +2,12 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+      [opened]="(isHandset$ | async) === false" >
     <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
+    <mat-nav-list >
       <a mat-list-item href="/home">Home</a>
-
-      <a mat-list-item href="/table">table</a>
-      <a mat-list-item href="/tables">tables</a>
-      <a mat-list-item href="/security">security</a>
-      <a mat-list-item href="/dashboard">dashboard</a>
+      <a mat-list-item href="/table" *ngIf="authenticated()==true">table</a>
+      <a mat-list-item href="/dashboard" *ngIf="authenticated()==true">dashboard</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
