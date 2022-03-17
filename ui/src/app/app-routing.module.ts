@@ -5,7 +5,6 @@ import { TableComponent } from './table/table.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SecurityComponent } from './security/security.component';
-import { TablesComponent } from './tables/tables.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
@@ -14,7 +13,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'table', component: TableComponent },
   { path: 'security', component: SecurityComponent },
-  { path: 'tables', component: TablesComponent },
   { path: 'dashboard', component: DashboardComponent },
 ];
 

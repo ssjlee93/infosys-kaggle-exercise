@@ -1,18 +1,11 @@
 package com.example.infosyskaggleexercise.controller;
 
-import com.example.infosyskaggleexercise.models.COVID19;
-import com.example.infosyskaggleexercise.repository.COVID19DataRepository;
+import com.example.infosyskaggleexercise.models.WorldData;
+import com.example.infosyskaggleexercise.repository.WorldDataRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -39,7 +32,7 @@ public class ExerciseController {
     Logger log = LoggerFactory.getLogger(ExerciseController.class);
 
     @Autowired
-    COVID19DataRepository repository;
+    WorldDataRepository repository;
 
     // landing page
     @GetMapping("/")
@@ -48,12 +41,12 @@ public class ExerciseController {
     }
 
     // GET request for CSV Data
-    @GetMapping(value={"/crawl/{date}"})
-    public List<COVID19> crawlData(@PathVariable String date) {
+    @GetMapping(value={"/crawl/world/{date}"})
+    public List<WorldData> crawlData(@PathVariable String date) {
         // List to hold a list of String tokens
-        List<COVID19> records = new ArrayList<>();
+        List<WorldData> records = new ArrayList<>();
         // filename by date
-        String fileName = "./data/" + date + ".csv";
+        String fileName = "./data/world/" + date + ".csv";
 
         try  {
             BufferedReader br = new BufferedReader(new FileReader(fileName));
@@ -61,12 +54,12 @@ public class ExerciseController {
             while ((line = br.readLine()) != null) {
                 // replace string characters to ignore ',' in "Combined_Key"
                 line = line.replace(", ", "-");
-                log.info(line);
+                log.debug(line);
                 // tokens
                 String[] values = line.split(COMMA_DELIMITER);
 
                 // convert string to POJO
-                COVID19 datum = COVID19.builder()
+                WorldData datum = WorldData.builder()
 //                        .FIPS(values[0])
                         .admin2(values[1])
                         .provinceState(values[2])
@@ -86,8 +79,10 @@ public class ExerciseController {
             }
             // dealing with only 1 CSV file to crawl. Small portion.
             // hence, delete all and save all.
+
             repository.deleteAllInBatch();
             repository.saveAll(records);
+            log.info("/crawl/world/" + date + " complete");
         } catch (FileNotFoundException e) {
             log.error("No file");
         } catch (IOException e) {
@@ -98,7 +93,8 @@ public class ExerciseController {
 
     // GET Request for receiving data from DB
     @GetMapping("/data")
-    public List<COVID19> getData() {
+    public List<WorldData> getData() {
+        log.info("/data : sending world data");
         return repository.findAll();
     }
 
@@ -108,7 +104,7 @@ public class ExerciseController {
         Map<String, Object> model = new HashMap<>();
         model.put("id", UUID.randomUUID().toString());
         model.put("content", "Hello World");
-        log.info((String) model.get("id"));
+        log.info("/resource : id " + (String) model.get("id"));
         return model;
     }
 
