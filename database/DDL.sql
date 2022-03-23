@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `COVID19_db`.`US_Data` (
   `People_Hospitalized` INT NULL,
   `Case_Fatality_Ratio` FLOAT(24) NULL,
   `UID` INT NOT NULL,
-  `ISO3` CHAR(3) NOT NULL,
+  `ISO3` CHAR(3) NOT NULL,````
   `Testing_Rate` FLOAT(24) NULL,
   `Hospitalization_Rate` FLOAT(24) NULL,
   `created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,

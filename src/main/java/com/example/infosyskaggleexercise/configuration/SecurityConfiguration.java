@@ -17,7 +17,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .httpBasic()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/index.html", "/", "/home", "/login", "/resource", "/data").permitAll()
+                .antMatchers("/index.html", "/", "/home", "/login", "/resource", "/world", "/us").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 // CSRF protection

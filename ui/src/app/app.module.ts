@@ -35,6 +35,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { UsTableComponent } from './us-table/us-table.component';
 
 // Spring boot Angular
 @Injectable()
@@ -57,7 +58,8 @@ export class XhrInterceptor implements HttpInterceptor {
     LoginComponent,
     HomeComponent,
     NavigationComponent,
-    DashboardComponent
+    DashboardComponent,
+    UsTableComponent
   ],
   imports: [
     // defaults
@@ -85,15 +87,10 @@ export class XhrInterceptor implements HttpInterceptor {
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-
-    // router
-    AppRoutingModule,
-
+    // home
     MatGridListModule,
-
     MatCardModule,
-
-    MatMenuModule
+    MatMenuModule,
   ],
   providers: [AppService, { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true }],
   bootstrap: [AppComponent]

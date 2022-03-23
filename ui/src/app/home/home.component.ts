@@ -4,7 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { Greeting } from '../models/Greeting';
 
 @Component({
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html',
+  selector: 'home-component',
+  // somehow this css is not working properly
+  // styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
 

@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @UtilityClass
-public class Utilities {
+public class Utils {
 
     // converts String to Integer wrapper class
     public Integer toInteger(String s) {

@@ -8,6 +8,7 @@
       <a mat-list-item href="/home">Home</a>
       <a mat-list-item href="/table" *ngIf="authenticated()==true">table</a>
       <a mat-list-item href="/dashboard" *ngIf="authenticated()==true">dashboard</a>
+      <a mat-list-item href="/ustable" *ngIf="authenticated()==true">table</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -23,7 +24,9 @@
       <span>COVID-19 Data Monitor</span>
       <span class="spacer"></span>
       <a  mat-raised-button color="accent" href="/login">Log In</a>
-
+      <!-- <a  mat-raised-button color="accent"
+      (click)="logout()"
+      *ngIf="authenticated()">Log out</a> -->
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>

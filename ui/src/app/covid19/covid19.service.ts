@@ -6,6 +6,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { Datum } from '../models/Datum';
 import { MatTableDataSource } from '@angular/material/table';
+import { USDatum } from '../models/USDatum';
 
 
 const URLPrefix = "http://localhost:8080";
@@ -15,8 +16,6 @@ const URLPrefix = "http://localhost:8080";
 })
 export class Covid19Service {
 
-  private url = URLPrefix + '/data';  // URL to web api
-
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     .append("Authorization", "Basic dXNlcjphM2YyNjQ5NC01NjcwLTQ5ODItOWQ2YS0yMGQ1OWE1ZjNjOWE=")
@@ -24,9 +23,9 @@ export class Covid19Service {
 
   constructor(private http: HttpClient) {   }
 
-    /** GET COVID19 data from the server */
+    /** GET COVID19 world data from the server */
     getData(): Observable<Datum[]> {
-      return this.http.get<Datum[]>(this.url)
+      return this.http.get<Datum[]>(URLPrefix + '/world')
         .pipe(
           tap(_ => console.log('fetched data')),
           map(data => data as Datum[]),
@@ -34,7 +33,17 @@ export class Covid19Service {
         );
     }
 
-      /**
+        /** GET COVID19 US data from the server */
+        getUsData(): Observable<USDatum[]> {
+          return this.http.get<USDatum[]>(URLPrefix + '/us')
+            .pipe(
+              tap(_ => console.log('fetched data')),
+              map(data => data as USDatum[]),
+              catchError(this.handleError<USDatum[]>('getData', []))
+            );
+        }
+
+  /**
    * Handle Http operation that failed.
    * Let the app continue.
    *

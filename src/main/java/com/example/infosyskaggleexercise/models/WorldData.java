@@ -27,19 +27,19 @@ public class WorldData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int id;
-    //    private String FIPS;
+    private String FIPS;
     private String admin2;
     private String provinceState;
     private String countryRegion;
     private Timestamp lastUpdate;
-    //    private BigDecimal lat;
-    //    private BigDecimal long_;
+    private BigDecimal lat;
+    private BigDecimal long_;
     private Integer confirmed;
     private Integer deaths;
     private Integer recovered;
     private Integer active;
     private BigDecimal incidentRate;
     private BigDecimal caseFatalityRatio;
-    //    private String combinedKey;
+    private String combinedKey;
 
 }

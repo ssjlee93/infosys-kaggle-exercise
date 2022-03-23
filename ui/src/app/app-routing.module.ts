@@ -6,12 +6,14 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SecurityComponent } from './security/security.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UsTableComponent } from './us-table/us-table.component';
 
 const routes: Routes = [
   { path: '',  pathMatch: 'full', redirectTo: 'home'},
   { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'table', component: TableComponent },
+  { path: 'ustable', component: UsTableComponent },
   { path: 'security', component: SecurityComponent },
   { path: 'dashboard', component: DashboardComponent },
 ];

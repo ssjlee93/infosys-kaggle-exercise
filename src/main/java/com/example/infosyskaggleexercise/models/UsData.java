@@ -19,7 +19,7 @@ import java.sql.Timestamp;
 @Builder    // builder pattern
 @AllArgsConstructor
 @NoArgsConstructor
-public class USData {
+public class UsData {
     // Commented out omitted fields from CSV file
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -35,10 +35,10 @@ public class USData {
     private Integer active;
     private String FIPS;
     private BigDecimal incidentRate;
-    private Integer totalTestResults;
+    private BigDecimal totalTestResults;
     private Integer peopleHospitalized;
     private BigDecimal caseFatalityRatio;
-    private Integer UID;
+    private BigDecimal UID;
     private String ISO3;
     private BigDecimal testingRate;
     private BigDecimal hospitalizationRate;
