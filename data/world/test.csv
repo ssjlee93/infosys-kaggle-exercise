@@ -1,0 +1,2 @@
+FIPS,Admin2,Province_State,Country_Region,Last_Update,Lat,Long_,Confirmed,Deaths,Recovered,Active,Combined_Key,Incident_Rate,Case_Fatality_Ratio
+,,,testCountry,2022-03-16 04:20:50,33.93911,67.709953,11111,1000,1100,1110,testCountry,453.5795655920708,4.330269410039021

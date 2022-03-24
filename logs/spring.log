@@ -73,3 +73,162 @@ Using generated security password: 2a8a25ff-960e-4836-859c-8646a1e1d7df
 2022-03-23 09:19:29.741  INFO 10732 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-03-23 09:19:29.745  INFO 10732 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-03-23 09:19:29.754  INFO 10732 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-23 09:31:51.872  INFO 18932 --- [restartedMain] com.example.infosyskaggleexercise.App    : Starting App using Java 17 on ssjlee93 with PID 18932 (C:\Users\sjlee\OneDrive\codespace\infosys-kaggle-exercise\target\classes started by sjlee in C:\Users\sjlee\OneDrive\codespace\infosys-kaggle-exercise)
+2022-03-23 09:31:51.873 DEBUG 18932 --- [restartedMain] com.example.infosyskaggleexercise.App    : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-03-23 09:31:51.874  INFO 18932 --- [restartedMain] com.example.infosyskaggleexercise.App    : No active profile set, falling back to 1 default profile: "default"
+2022-03-23 09:31:51.937  INFO 18932 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-23 09:31:51.937  INFO 18932 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-23 09:31:53.294  INFO 18932 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-23 09:31:53.403  INFO 18932 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 2 JPA repository interfaces.
+2022-03-23 09:31:54.639  INFO 18932 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-23 09:31:54.657  INFO 18932 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-23 09:31:54.658  INFO 18932 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-23 09:31:54.776  INFO 18932 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-23 09:31:54.776  INFO 18932 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2839 ms
+2022-03-23 09:31:55.264  INFO 18932 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-23 09:31:55.548  INFO 18932 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-23 09:31:55.635  INFO 18932 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-23 09:31:55.730  INFO 18932 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-03-23 09:31:56.110  INFO 18932 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-23 09:31:56.406  INFO 18932 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-03-23 09:31:57.301  INFO 18932 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-23 09:31:57.312  INFO 18932 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-23 09:31:58.044  WARN 18932 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-23 09:31:58.204  INFO 18932 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 75cc83d3-44c2-4c6e-b3ff-3b6375a6b388
+
+2022-03-23 09:31:58.920  INFO 18932 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-03-23 09:31:59.186  INFO 18932 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-23 09:31:59.260  INFO 18932 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-23 09:31:59.275  INFO 18932 --- [restartedMain] com.example.infosyskaggleexercise.App    : Started App in 8.416 seconds (JVM running for 9.509)
+2022-03-23 10:02:17.015  INFO 18932 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-23 10:02:17.021  INFO 18932 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-23 10:02:17.027  INFO 18932 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-23 12:35:45.476  INFO 3376 --- [restartedMain] com.example.infosyskaggleexercise.App    : Starting App using Java 17 on ssjlee93 with PID 3376 (C:\Users\sjlee\OneDrive\codespace\infosys-kaggle-exercise\target\classes started by sjlee in C:\Users\sjlee\OneDrive\codespace\infosys-kaggle-exercise)
+2022-03-23 12:35:45.477 DEBUG 3376 --- [restartedMain] com.example.infosyskaggleexercise.App    : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-03-23 12:35:45.478  INFO 3376 --- [restartedMain] com.example.infosyskaggleexercise.App    : No active profile set, falling back to 1 default profile: "default"
+2022-03-23 12:35:45.538  INFO 3376 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-23 12:35:45.538  INFO 3376 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-23 12:35:46.553  INFO 3376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-23 12:35:46.645  INFO 3376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 2 JPA repository interfaces.
+2022-03-23 12:35:47.620  INFO 3376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-23 12:35:47.642  INFO 3376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-23 12:35:47.643  INFO 3376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-23 12:35:47.780  INFO 3376 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-23 12:35:47.780  INFO 3376 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2241 ms
+2022-03-23 12:35:48.111  INFO 3376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-23 12:35:48.308  INFO 3376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-23 12:35:48.378  INFO 3376 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-23 12:35:48.463  INFO 3376 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-03-23 12:35:48.726  INFO 3376 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-23 12:35:48.902  INFO 3376 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-03-23 12:35:49.620  INFO 3376 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-23 12:35:49.628  INFO 3376 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-23 12:35:50.108  WARN 3376 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-23 12:35:50.186  INFO 3376 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ed4798f8-5d56-43ba-aeb8-9368910c44f4
+
+2022-03-23 12:35:50.559  INFO 3376 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-03-23 12:35:50.796  INFO 3376 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-23 12:35:50.870  INFO 3376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-23 12:35:50.883  INFO 3376 --- [restartedMain] com.example.infosyskaggleexercise.App    : Started App in 6.008 seconds (JVM running for 6.795)
+2022-03-23 12:36:31.974  INFO 3376 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-23 12:36:31.975  INFO 3376 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-23 12:36:31.976  INFO 3376 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-23 12:36:32.033  INFO 3376 --- [http-nio-8080-exec-2] c.e.i.controller.AllDataController       : /resource : id 49a2125a-8aaa-4f00-9249-3f81a05847f4
+2022-03-23 12:36:40.770  INFO 3376 --- [http-nio-8080-exec-4] c.e.i.controller.AllDataController       : /resource : id 0259a035-9a50-4d82-b3ee-e7113b19014b
+2022-03-23 12:36:42.710  INFO 3376 --- [http-nio-8080-exec-3] c.e.i.controller.AllDataController       : /resource : id e6db36c8-8a34-45e2-b920-5640584d80e2
+2022-03-23 12:37:03.258  INFO 3376 --- [http-nio-8080-exec-7] c.e.i.controller.AllDataController       : /user : user
+2022-03-23 12:37:03.308  INFO 3376 --- [http-nio-8080-exec-6] c.e.i.controller.AllDataController       : /resource : id 76a944f4-5b70-4bc9-bd24-ce4c948209d2
+2022-03-23 12:37:05.187  INFO 3376 --- [http-nio-8080-exec-9] c.e.i.controller.AllDataController       : /world : sending world data
+2022-03-23 12:37:31.503  INFO 3376 --- [http-nio-8080-exec-1] c.e.i.controller.AllDataController       : /resource : id 59880bfa-1a3e-4f42-80f2-a8c22018a776
+2022-03-23 12:37:31.526  INFO 3376 --- [http-nio-8080-exec-2] c.e.i.controller.AllDataController       : /world : sending world data
+2022-03-23 12:37:39.598  INFO 3376 --- [http-nio-8080-exec-5] c.e.i.controller.AllDataController       : /resource : id d2337e16-3c4f-4370-a73d-79ddfbfd91f6
+2022-03-23 12:37:49.296  INFO 3376 --- [http-nio-8080-exec-4] c.e.i.controller.AllDataController       : /user : user
+2022-03-23 12:37:49.314  INFO 3376 --- [http-nio-8080-exec-3] c.e.i.controller.AllDataController       : /resource : id 42068252-caf7-4377-b747-67f1944dedd9
+2022-03-23 12:37:52.589  INFO 3376 --- [http-nio-8080-exec-8] c.e.i.controller.AllDataController       : /world : sending world data
+2022-03-23 12:58:10.113  INFO 3376 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-23 12:58:10.118  INFO 3376 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-23 12:58:10.133  INFO 3376 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-23 12:58:13.884  INFO 25060 --- [restartedMain] com.example.infosyskaggleexercise.App    : Starting App using Java 17 on ssjlee93 with PID 25060 (C:\Users\sjlee\OneDrive\codespace\infosys-kaggle-exercise\target\classes started by sjlee in C:\Users\sjlee\OneDrive\codespace\infosys-kaggle-exercise)
+2022-03-23 12:58:13.885 DEBUG 25060 --- [restartedMain] com.example.infosyskaggleexercise.App    : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-03-23 12:58:13.886  INFO 25060 --- [restartedMain] com.example.infosyskaggleexercise.App    : No active profile set, falling back to 1 default profile: "default"
+2022-03-23 12:58:13.999  INFO 25060 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-23 12:58:14.000  INFO 25060 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-23 12:58:15.008  INFO 25060 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-23 12:58:15.088  INFO 25060 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 2 JPA repository interfaces.
+2022-03-23 12:58:16.128  INFO 25060 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-23 12:58:16.152  INFO 25060 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-23 12:58:16.152  INFO 25060 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-23 12:58:16.310  INFO 25060 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-23 12:58:16.310  INFO 25060 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2309 ms
+2022-03-23 12:58:16.692  INFO 25060 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-23 12:58:16.855  INFO 25060 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-23 12:58:16.952  INFO 25060 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-23 12:58:17.068  INFO 25060 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-03-23 12:58:17.344  INFO 25060 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-23 12:58:17.544  INFO 25060 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-03-23 12:58:18.298  INFO 25060 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-23 12:58:18.306  INFO 25060 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-23 12:58:18.930  WARN 25060 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-23 12:58:19.066  INFO 25060 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 585ad42b-bf7d-49fc-9a3c-f3b339c8ecfa
+
+2022-03-23 12:58:19.492  INFO 25060 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-03-23 12:58:19.903  INFO 25060 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-23 12:58:20.066  INFO 25060 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-23 12:58:20.081  INFO 25060 --- [restartedMain] com.example.infosyskaggleexercise.App    : Started App in 6.914 seconds (JVM running for 7.761)
+2022-03-23 12:58:42.195  INFO 25060 --- [http-nio-8080-exec-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-23 12:58:42.196  INFO 25060 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-23 12:58:42.198  INFO 25060 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-03-23 12:58:42.255  INFO 25060 --- [http-nio-8080-exec-5] c.e.i.controller.AllDataController       : /resource : id 73cce0eb-7b8f-4b77-98e8-613b9f2a1000
+2022-03-23 13:09:28.706  INFO 25060 --- [http-nio-8080-exec-4] c.e.i.controller.AllDataController       : /user : user
+2022-03-23 13:09:28.759  INFO 25060 --- [http-nio-8080-exec-6] c.e.i.controller.AllDataController       : /resource : id 8213439a-fd66-429a-8972-f13d2d975e87
+2022-03-23 13:09:36.809  INFO 25060 --- [http-nio-8080-exec-7] c.e.i.controller.AllDataController       : /world : sending world data
+2022-03-23 13:10:24.640  INFO 25060 --- [http-nio-8080-exec-8] c.e.i.controller.AllDataController       : /resource : id 505dccc6-b313-4803-9528-4f24b42253b6
+2022-03-23 13:10:33.395  INFO 25060 --- [http-nio-8080-exec-1] c.e.i.controller.AllDataController       : /user : user
+2022-03-23 13:10:33.416  INFO 25060 --- [http-nio-8080-exec-5] c.e.i.controller.AllDataController       : /resource : id 15d14e17-8dac-454a-a0a9-75751e4e7fa5
+2022-03-23 13:10:36.346  INFO 25060 --- [http-nio-8080-exec-9] c.e.i.controller.AllDataController       : /world : sending world data
+2022-03-23 13:18:18.694  INFO 25060 --- [http-nio-8080-exec-2] c.e.i.controller.AllDataController       : /user : user
+2022-03-23 13:18:18.712  INFO 25060 --- [http-nio-8080-exec-6] c.e.i.controller.AllDataController       : /resource : id 19dd22cd-a647-4c00-9964-513efce86af6
+2022-03-23 13:22:54.638  INFO 25060 --- [http-nio-8080-exec-7] c.e.i.controller.AllDataController       : /resource : id 18a27b1c-bff5-41ae-9c82-c8c1382e198d
+2022-03-23 13:23:07.188  INFO 25060 --- [http-nio-8080-exec-8] c.e.i.controller.AllDataController       : /user : user
+2022-03-23 13:23:07.202  INFO 25060 --- [http-nio-8080-exec-1] c.e.i.controller.AllDataController       : /resource : id 63cc513c-f6a9-452f-8155-4be1889f1a37
+2022-03-23 13:23:44.256  INFO 25060 --- [http-nio-8080-exec-5] c.e.i.controller.AllDataController       : /world : sending world data
+2022-03-23 13:26:41.165  INFO 25060 --- [http-nio-8080-exec-9] c.e.i.controller.AllDataController       : /world : sending world data
+2022-03-23 13:29:11.236  INFO 25060 --- [http-nio-8080-exec-2] c.e.i.controller.AllDataController       : /resource : id a850ebbc-b68c-4b4f-ba91-20f1302690ed
+2022-03-23 15:32:14.130  INFO 25060 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-23 15:32:14.148  INFO 25060 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-23 15:32:14.153  INFO 25060 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-23 15:32:14.411  INFO 25060 --- [restartedMain] com.example.infosyskaggleexercise.App    : Starting App using Java 17 on ssjlee93 with PID 25060 (C:\Users\sjlee\OneDrive\codespace\infosys-kaggle-exercise\target\classes started by sjlee in C:\Users\sjlee\OneDrive\codespace\infosys-kaggle-exercise)
+2022-03-23 15:32:14.412 DEBUG 25060 --- [restartedMain] com.example.infosyskaggleexercise.App    : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-03-23 15:32:14.412  INFO 25060 --- [restartedMain] com.example.infosyskaggleexercise.App    : No active profile set, falling back to 1 default profile: "default"
+2022-03-23 15:32:14.933  INFO 25060 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-23 15:32:14.971  INFO 25060 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
+2022-03-23 15:32:15.210  INFO 25060 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-23 15:32:15.211  INFO 25060 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-23 15:32:15.211  INFO 25060 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-23 15:32:15.281  INFO 25060 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-23 15:32:15.282  INFO 25060 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 866 ms
+2022-03-23 15:32:15.359  INFO 25060 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-03-23 15:32:15.388  INFO 25060 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-03-23 15:32:15.397  INFO 25060 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-23 15:32:15.413  INFO 25060 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-03-23 15:32:15.575  INFO 25060 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-23 15:32:15.577  INFO 25060 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-23 15:32:15.789  WARN 25060 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-23 15:32:15.848  INFO 25060 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: dbcb06c6-c5f7-4b62-8df2-86133c3b346b
+
+2022-03-23 15:32:16.051  INFO 25060 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-03-23 15:32:16.150  INFO 25060 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-23 15:32:16.162  INFO 25060 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-23 15:32:16.167  INFO 25060 --- [restartedMain] com.example.infosyskaggleexercise.App    : Started App in 1.825 seconds (JVM running for 9243.848)
+2022-03-23 15:32:16.170  INFO 25060 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-03-23 19:33:30.486  INFO 25060 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-23 19:33:30.521  INFO 25060 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-03-23 19:33:30.525  INFO 25060 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.

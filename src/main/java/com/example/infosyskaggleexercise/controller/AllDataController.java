@@ -1,9 +1,13 @@
 package com.example.infosyskaggleexercise.controller;
 
+import com.example.infosyskaggleexercise.exceptions.NoCsvFileException;
+import com.example.infosyskaggleexercise.exceptions.WrongDateException;
+import com.example.infosyskaggleexercise.exceptions.WrongInputException;
 import com.example.infosyskaggleexercise.models.UsData;
 import com.example.infosyskaggleexercise.models.WorldData;
 import com.example.infosyskaggleexercise.repository.USDataRepository;
 import com.example.infosyskaggleexercise.repository.WorldDataRepository;
+import com.example.infosyskaggleexercise.services.CrawlService;
 import com.example.infosyskaggleexercise.utils.Utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,9 +27,12 @@ import java.util.*;
 
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
-public class ExerciseController {
+public class AllDataController {
     private final String COMMA_DELIMITER = ",";
-    Logger log = LoggerFactory.getLogger(ExerciseController.class);
+    Logger log = LoggerFactory.getLogger(AllDataController.class);
+
+    @Autowired
+    CrawlService crawlService;
 
     @Autowired
     WorldDataRepository worldRepo;
@@ -43,57 +50,26 @@ public class ExerciseController {
     // world data by countries
     @GetMapping(value={"/crawl/world/{date}"})
     public List<WorldData> crawlWorldData(@PathVariable String date) {
-        // List to hold a list of String tokens
-        List<WorldData> records = new ArrayList<>();
-        // filename by date
-        String fileName = "./data/world/" + date + ".csv";
 
         try  {
-            BufferedReader br = new BufferedReader(new FileReader(fileName));
-            String line = br.readLine();
-            while ((line = br.readLine()) != null) {
-                // replace string characters to ignore ',' in "Combined_Key"
-                line = line.replace(", ", "-");
-                log.debug(line);
-                // tokens
-                String[] values = line.split(COMMA_DELIMITER);
-
-                // convert string to POJO
-                WorldData datum = WorldData.builder()
-                        .FIPS(values[0])
-                        .admin2(values[1])
-                        .provinceState(values[2])
-                        .countryRegion(values[3])
-                        .lastUpdate(Utils.toTimeStamp(values[4]))
-                        .lat(Utils.toBigDecimal(values[5]))
-                        .long_(Utils.toBigDecimal(values[6]))
-                        .confirmed(Utils.toInteger(values[7]))
-                        .deaths(Utils.toInteger(values[8]))
-                        .recovered(Utils.toInteger(values[9]))
-                        .active(Utils.toInteger(values[10]))
-                        .combinedKey(values[11])
-                        .incidentRate(Utils.toBigDecimal(values[12]))
-                        .caseFatalityRatio(Utils.toBigDecimal(values[13]))
-                        .build();
-                records.add(datum);
-            }
-            // dealing with only 1 CSV file to crawl. Small portion.
-            // hence, delete all and save all.
-
-            worldRepo.deleteAllInBatch();
-            worldRepo.saveAll(records);
             log.info("/crawl/world/" + date + " complete");
-        } catch (FileNotFoundException e) {
+            return crawlService.loadWorldCsvData(date);
+        } catch (NoCsvFileException e) {
             log.error("/crawl/world : No file");
-        } catch (IOException e) {
+        } catch (WrongInputException e) {
             log.error("/crawl/world : IO exception");
+        } catch (WrongDateException e) {
+            log.error("/crawl/world : Wrong date input" + date);
         }
-        return records;
+        // return null if try block fails
+        return null;
     }
 
     // US data by state
     @GetMapping(value={"/crawl/US/{date}"})
     public List<UsData> crawlUSData(@PathVariable String date) {
+        // TODO move to service layer
+
         // List to hold a list of String tokens
         List<UsData> records = new ArrayList<>();
         // filename by date
@@ -147,6 +123,8 @@ public class ExerciseController {
     // GET Request for receiving world data from DB
     @GetMapping("/world")
     public List<WorldData> getWorldData() {
+        // TODO move to service layer
+
         log.info("/world : sending world data");
         return worldRepo.findAll();
     }
@@ -154,11 +132,14 @@ public class ExerciseController {
     // GET Request for receiving us data from DB
     @GetMapping("/us")
     public List<UsData> getUsData() {
+        // TODO move to service layer
+
         log.info("/world : sending world data");
         return usRepo.findAll();
     }
 
     // Spring boot Angular security
+    // TODO remove once Keycloak is implemented
     @GetMapping("/resource")
     public Map<String, Object> home() {
         Map<String, Object> model = new HashMap<>();
@@ -168,6 +149,7 @@ public class ExerciseController {
         return model;
     }
 
+    // TODO delegate user authentication to Keycloak
     @GetMapping("/user")
     public Principal user(Principal user) {
         log.info("/user : " + user.getName());

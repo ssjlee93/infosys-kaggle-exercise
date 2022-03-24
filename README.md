@@ -61,4 +61,12 @@ ng serve --open
 
 MIT License
 
+## TODOS
 
+- swagger and yml for API specification
+- automate data crawling
+- update docs
+- add Keycloak
+- add SSL certificate
+- unit testing
+- integration testing
